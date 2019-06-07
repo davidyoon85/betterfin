@@ -1,4 +1,4 @@
-const jsonResponse = {
+{
     "trxs_count": {
         "transaction": {
             "TOTAL": {
@@ -3566,7 +3566,7 @@ const jsonResponse = {
                 "2019-03-15",
                 "2019-03-16",
                 "2019-03-17",
-                "2019-03-18",
+                "2019-03-18"
             ],
             "daily_values": [
                 192.79,
