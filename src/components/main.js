@@ -6,9 +6,9 @@ class Main extends Component {
     
     render() {
         let item = data.trxs.transaction[0]
-        debugger
+
         return (
-            <h1>bye</h1>
+            <h1>Hello, world!</h1>
         )
     }
 }
