@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
-const data = require('../data/data.json');
+import UserProfile from './user_profile';
+import Graph from './graph';
 
 class Main extends Component {
-    
-    render() {
-        let item = data.trxs.transaction[0]
+    componentDidMount() {
+    }
 
+    render() {
         return (
-            <h1>Hello, world!</h1>
+            <div>
+                <UserProfile />
+                
+                <div style={{ height: '400px' }}>
+                    <Graph />
+                </div>
+            </div>
         )
     }
 }
