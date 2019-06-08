@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import trxData from '../data/trx.json'
+
+const data = require('../data/data.json');
 
 class Main extends Component {
+    
     render() {
+        let item = data.trxs.transaction[0]
+        debugger
         return (
-            <h1>hi</h1>
+            <h1>bye</h1>
         )
     }
 }
