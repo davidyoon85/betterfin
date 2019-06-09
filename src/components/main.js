@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import UserProfile from './user_profile';
 import Graph from './graph';
+import Table from './table';
 
 class Main extends Component {
     componentDidMount() {
@@ -10,10 +11,16 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <UserProfile />
-                
-                <div style={{ height: '400px' }}>
+                <div>
+                    <UserProfile />
+                </div>
+
+                <div>
                     <Graph />
+                </div>
+
+                <div>
+                    <Table />
                 </div>
             </div>
         )
