@@ -18,3 +18,16 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
+
+#transaction_table {
+    height: 20vh;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+#transaction_body {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
