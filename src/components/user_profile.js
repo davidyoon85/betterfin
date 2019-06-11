@@ -5,14 +5,14 @@ const trxData = require('../data/data.json');
 class UserProfile extends Component {
     render() {
         const account = Object.values(trxData.accounts.account)[0];
-        const userName = account.displayedName;
-        const bankName = account.accountName;
+        const { displayedName, accountName, accountNumber } = account;
         const acctBalance = account.currentBalance.amount;
         return (
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span>Name: {userName}</span>
-                <span>Bank:{bankName}</span>
-                <span>Account Balance: {acctBalance}</span>
+            <div className="profile_main">
+                <span><strong>Name: </strong>{displayedName}</span>
+                <span><strong>Bank: </strong>{accountName}</span>
+                <span><strong>Account Number: </strong>{accountNumber}</span>
+                <span><strong>Account Balance: </strong>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(acctBalance)}</span>
             </div>
         )
     }

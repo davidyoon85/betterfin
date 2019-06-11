@@ -19,15 +19,125 @@ time, mark, audio, video {
     background:transparent;
 }
 
-#transaction_table {
-    height: 20vh;
-    width: 100%;
-    background-color: whitesmoke;
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: "Apercu", sans-serif;
+    color: #3f4047;
 }
 
-#transaction_body {
-    display: block;
+a {
+    text-decoration:none;
+    color: black;
+ }
+
+.nav {
+    background: #fff;
+    height: 80px;
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+}
+
+.navContent {
+    max-width: 1000px;
+    padding: 0 12px;
+    margin: 0 auto;
     height: 100%;
+}
+
+.navHeader {
     width: 100%;
-    overflow: auto;
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.betterfin-logo {
+    width: 100%;
+    max-width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+}
+
+.drop-menu {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100px;
+    margin: 2px 0 0 0;
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.avatar {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.avatar_img {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar_svg {
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+.menu {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.subMenu {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 3px;
+    margin-left: 6px;
+}
+
+.subMenu:hover {
+    color: rgb(246, 102, 82);
+}
+
+.subMenu_svg {
+    display: inline-block; 
+    vertical-align: middle
+}
+
+.profile_container {
+    /* min-height: calc(100vh - 80px); */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 6px;
+}
+
+.profile_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.ReactTable {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.ReactTable .rt-tbody .rt-td {
+    text-align: center;
 }

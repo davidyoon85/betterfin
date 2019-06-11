@@ -20,7 +20,7 @@ class Graph extends Component {
 
     render() {
         return (
-            <svg id="svg" width="600" height="300"></svg>
+            <svg id="svg" width="600" height="0"></svg>
         )
     }
 }
