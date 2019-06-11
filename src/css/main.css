@@ -23,6 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: "Apercu", sans-serif;
     color: #3f4047;
+    font-size: 12px;
 }
 
 a {
@@ -125,12 +126,16 @@ img {
     /* min-height: calc(100vh - 80px); */
     max-width: 1000px;
     margin: 0 auto;
-    padding: 48px 6px;
+    padding: 35px 35px;
 }
 
 .profile_main {
     display: flex;
     flex-direction: column;
+}
+
+.profile_main span {
+    padding: 3px;
 }
 
 .ReactTable {
@@ -140,4 +145,29 @@ img {
 
 .ReactTable .rt-tbody .rt-td {
     text-align: center;
+}
+
+.rt-thead {
+    background: #f66652;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.ReactTable .rt-tbody .rt-tr-group:nth-child(odd) {
+    background: #f66652;
+    color: black;
+    filter: brightness(200%);
+}
+
+.ReactTable .-pagination .-btn {
+    background: #f66652;
+    color: white;
+    font-weight: 700;
+}
+
+.-previous button:hover {
+    opacity: .5;
+    background: #f66652;
+    color: #f66652;
 }
