@@ -31,6 +31,9 @@ a {
     color: black;
  }
 
+
+/* nav bar */
+
 .nav {
     background: #fff;
     height: 80px;
@@ -97,6 +100,17 @@ img {
 .avatar_svg {
     display: inline-block; 
     vertical-align: middle;
+    padding-right: 12px;
+}
+
+.user-name {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.user-name:hover {
+    color: rgb(246, 102, 82);
 }
 
 .menu {
@@ -122,11 +136,21 @@ img {
     vertical-align: middle
 }
 
+
+/* page content */
+
+.pageContent {
+    min-height: calc(100vh - 80px);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 6px;
+}
+
 .profile_container {
     /* min-height: calc(100vh - 80px); */
     max-width: 1000px;
     margin: 0 auto;
-    padding: 35px 35px;
+    padding-left: 35px;
 }
 
 .profile_main {
@@ -134,8 +158,16 @@ img {
     flex-direction: column;
 }
 
-.profile_main span {
-    padding: 3px;
+.profile_main h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 0 0 24px 0;
+}
+
+.profile_main h2 {
+    font-size: 1.9em;
+    font-weight: 400;
+    margin: 0 0 24px 0;
 }
 
 .ReactTable {
@@ -152,6 +184,7 @@ img {
     color: white;
     font-size: 1.1em;
     font-weight: 700;
+    line-height: 1.6;
 }
 
 .ReactTable .rt-tbody .rt-tr-group:nth-child(odd) {
@@ -166,8 +199,17 @@ img {
     font-weight: 700;
 }
 
+.ReactTable .-pagination .-btn:hover {
+    background: #f66652 !important;
+    opacity: .5;
+}
+
 .-previous button:hover {
     opacity: .5;
     background: #f66652;
     color: #f66652;
+}
+
+.chart_section {
+    display: flex;
 }
