@@ -42,7 +42,7 @@ class Chart extends Component {
                         // width={500}
                         // height={500}
                         options={{ 
-                            responsive: true,
+                            
                             // title:{
                             //     display: true,
                             //     text: 'Monthly Averages',
@@ -87,7 +87,8 @@ class Chart extends Component {
                                 yPadding: 15,
                                 displayColors: false
                             },
-                            // maintainAspectRatio: false 
+                            // maintainAspectRatio: false,
+                            responsive: true,
                         }}
                     />
                 </div>

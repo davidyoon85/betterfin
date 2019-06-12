@@ -188,13 +188,21 @@ img {
 }
 
 .-header {
-    line-height: 1.6;
+    line-height: 2;
 }
 
-.ReactTable .rt-tbody .rt-tr-group:nth-child(odd) {
-    background: #f66652;
+.ReactTable .rt-tbody .rt-tr-group:nth-child(n) {
     color: black;
-    filter: brightness(200%);
+    border: none;
+}
+
+.ReactTable .rt-tbody .rt-tr-group:nth-child(n):hover {
+    background: #f66652;
+    filter: brightness(200%)
+}
+
+.ReactTable.-striped .rt-tr.-odd {
+    background: white;
 }
 
 .ReactTable .-pagination .-btn {
@@ -214,6 +222,10 @@ img {
     color: #f66652;
 }
 
+.rt-tr {
+    padding: 6px;
+}
+
 .table_container {
     width: 80%;
     margin: 0 auto;
@@ -224,7 +236,7 @@ img {
     font-weight: 700;
     font-size: 1.4em;
     margin-bottom: 5%;
-    text-align: center;
+    text-align: left;
 }
 
 .chart_container {
@@ -234,7 +246,6 @@ img {
 
 .chart_section {
     display: flex;
-    width: 100%;
     height: 30%;
 }
 
@@ -245,7 +256,10 @@ img {
 }
 
 canvas {
-    width: 100%;
+    width: 100% !important;
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    padding: 20px 20px;
+    box-sizing: border-box;
 }
 
 .chart_header {
