@@ -18,6 +18,7 @@ class Table extends React.Component {
     const { data } = this.state;
     return (
       <div>
+        <div className="table_header">Transaction List</div>
         <ReactTable
           data={data}
           columns={[

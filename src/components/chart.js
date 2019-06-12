@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
+import { Line } from 'react-chartjs-2';
+
 const data = require('../data/data.json');
 
 class Chart extends Component {
@@ -8,41 +10,86 @@ class Chart extends Component {
         super(props)
 
         this.state = {
-            data: data
+            data: data,
+            chartData: {
+                labels: data.balances[0].month_labels,
+                datasets: [
+                    {
+                        // label: 'Month Average',
+                        data: data.balances[0].month_average_values,
+                        borderColor: 'rgba(246,102,82)',
+                        backgroundColor: 'transparent',
+                        pointBackgroundColor: 'rgba(246,102,82)',
+                    }
+                ]
+            }
         }
 
-        this.createBalanceChart = this.createBalanceChart.bind(this);
+        // this.createBalanceChart = this.createBalanceChart.bind(this);
     }
 
     componentDidMount() {
-
-
-        // var data1 = [
-        //     {ser1: 0.3, ser2: 4},
-        //     {ser1: 2, ser2: 16},
-        //     {ser1: 3, ser2: 8}
-        //  ];
-        this.createBalanceChart() 
-    }
-
-    createBalanceChart() {
-        const months = this.state.data.balances[0].month_labels;
-        const month_averages = this.state.data.balances[0].month_average_values;
-        const data = [];
-
-        for (let i = 0; i < months.length; i++) {
-            data.push({month: months[i], average: month_averages[i]}) 
-        }
-
-        
+        // this.createBalanceChart() 
     }
 
     render() {
         return (
             <div className="chart_section">
-        {/* <button onclick="update(data1)">Dataset 1</button>
-<button onclick="update(data2)">Dataset 2</button> */}
                 <div className="balance_chart">
+                    <div className="chart_header">Average Cash Balance</div>
+                    <Line 
+                        data={this.state.chartData}
+                        // width={500}
+                        // height={500}
+                        options={{ 
+                            responsive: true,
+                            // title:{
+                            //     display: true,
+                            //     text: 'Monthly Averages',
+                            //     fontColor: '#898B96',
+                            //     fontSize: 20,
+                            //     position: 'top'
+                            // },
+                            legend:{
+                                display: false
+                            },
+                            scales: {
+                                yAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: '$ (USD)',
+                                        fontStyle: 'bold'
+                                    },
+                                    ticks: {
+                                        beginAtZero:true,
+                                        max: Math.round( (1.5 * Math.max(...this.state.data.balances[0].month_average_values)) / 50) * 50,
+                                        fontStyle: 'bold',
+
+                                    }
+                                }],
+                                xAxes: [{
+                                    ticks: {
+                                        fontStyle: 'bold',
+
+                                    }
+                                }]
+                            },
+                            tooltips: {
+                                enabled: true,
+                                backgroundColor: 'white',
+                                borderColor: 'rgba(246,102,82)',
+                                borderWidth: 2,
+                                titleFontSize: 14,
+                                titleFontColor: 'rgba(246,102,82)',
+                                bodyFontColor: 'rgba(246,102,82)',
+                                bodyFontStyle: 'bold',
+                                xPadding: 15,
+                                yPadding: 15,
+                                displayColors: false
+                            },
+                            // maintainAspectRatio: false 
+                        }}
+                    />
                 </div>
                 <div className="expense_chart">
                     
@@ -53,27 +100,3 @@ class Chart extends Component {
 }
 
 export default Chart;
-
-// // Create a function that takes a dataset as input and update the plot:
-// function update(data) {
-  
-//     // Create a update selection: bind to the new data
-//     var u = svg.selectAll(".lineTest")
-//       .data([data], function(d){ return d.ser1 });
-  
-//     // Updata the line
-//     u
-//       .enter()
-//       .append("path")
-//       .attr("class","lineTest")
-//       .merge(u)
-//       .transition()
-//       .duration(3000)
-//       .attr("d", d3.line()
-//         .x(function(d) { return x(d.ser1); })
-//         .y(function(d) { return y(d.ser2); }))
-//         .attr("fill", "none")
-//         .attr("stroke", "steelblue")
-//         .attr("stroke-width", 2.5)
-  
-//   }
