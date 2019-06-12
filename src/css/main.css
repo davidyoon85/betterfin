@@ -184,6 +184,9 @@ img {
     color: white;
     font-size: 1.1em;
     font-weight: 700;
+}
+
+.-header {
     line-height: 1.6;
 }
 
