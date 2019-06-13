@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
-import { Line, Pie } from 'react-chartjs-2';
+import { Line, Doughnut } from 'react-chartjs-2';
 
 const data = require('../data/data.json');
 
@@ -12,11 +12,11 @@ class Chart extends Component {
         this.state = {
             data: data,
             trxs: data.trxs.transaction,
+            monthly: {},
             chartData: {
                 labels: data.balances[0].month_labels,
                 datasets: [
                     {
-                        // label: 'Month Average',
                         data: data.balances[0].month_average_values,
                         borderColor: 'rgba(246,102,82)',
                         backgroundColor: 'transparent',
@@ -33,14 +33,14 @@ class Chart extends Component {
             }
         }
 
-        // this.createBalanceChart = this.createBalanceChart.bind(this);
+        this.getData = this.getData.bind(this);
     }
 
     componentDidMount() {
-        
+        this.getData();
     }
 
-    render() {
+    getData() {
         const janExpenses = [];
         const janCategories = {};
         let janTotal = 0;
@@ -52,30 +52,116 @@ class Chart extends Component {
         let marTotal = 0;
 
         this.state.trxs.forEach((ele) => {
-            // debugger
             if (ele.baseType === 'DEBIT') {
                 if (ele.postDate.includes('2019-01')) {
                     janTotal += ele.amount.amount;
-                    let count = 0;
-                    janCategories[ele.category] = count + ele.amount.amount;
+                    if (janCategories[ele.category] === undefined) {
+                        janCategories[ele.category] = 0
+                    }
+                    janCategories[ele.category] += ele.amount.amount;
                     janExpenses.push({ele});
                 } else if (ele.postDate.includes('2019-02')) {
                     febTotal += ele.amount.amount;
-                    febCategories[ele.category] = 0;
+                    if (febCategories[ele.category] === undefined) {
+                        febCategories[ele.category] = 0
+                    }
                     febCategories[ele.category] += ele.amount.amount;
                     febExpenses.push({ele});
                 } else if (ele.postDate.includes('2019-03')) {
                     marTotal += ele.amount.amount;
-                    marCategories[ele.category] = 0;
+                    if (marCategories[ele.category] === undefined) {
+                        marCategories[ele.category] = 0
+                    }
                     marCategories[ele.category] += ele.amount.amount;
                     marExpenses.push({ele});
                 } 
             }
         })
-        debugger
+
         const totalExpenses = [janTotal, febTotal, marTotal]
+        const janExpenseTotals = [];
+        const febExpenseTotals = [];
+        const marExpenseTotals = [];
 
+        for (let i = 0; i < Object.values(janCategories).length; i++) {
+            janExpenseTotals.push(Object.values(janCategories)[i]);
+        }
 
+        for (let i = 0; i < Object.values(febCategories).length; i++) {
+            febExpenseTotals.push(Object.values(febCategories)[i]);
+        }
+
+        for (let i = 0; i < Object.values(marCategories).length; i++) {
+            marExpenseTotals.push(Object.values(marCategories)[i]);
+        }
+
+        this.setState({
+            monthly: totalExpenses,
+            monthly: janExpenseTotals,
+            monthly: janCategories,
+            monthly: febExpenseTotals,
+            monthly: febCategories,
+            monthly: marExpenseTotals,
+            monthly: marCategories
+        })
+    }
+
+    janClick() {
+
+    }
+
+    febClick() {
+        
+    }
+
+    marClick() {
+        
+    }
+
+    render() {
+        debugger
+        const janExpenses = [];
+        const janCategories = {};
+        let janTotal = 0;
+        const febExpenses = [];
+        const febCategories = {};
+        let febTotal = 0;
+        const marExpenses = [];
+        const marCategories = {};
+        let marTotal = 0;
+
+        this.state.trxs.forEach((ele) => {
+            if (ele.baseType === 'DEBIT') {
+                if (ele.postDate.includes('2019-01')) {
+                    janTotal += ele.amount.amount;
+                    if (janCategories[ele.category] === undefined) {
+                        janCategories[ele.category] = 0
+                    }
+                    janCategories[ele.category] += ele.amount.amount;
+                    janExpenses.push({ele});
+                } else if (ele.postDate.includes('2019-02')) {
+                    febTotal += ele.amount.amount;
+                    if (febCategories[ele.category] === undefined) {
+                        febCategories[ele.category] = 0
+                    }
+                    febCategories[ele.category] += ele.amount.amount;
+                    febExpenses.push({ele});
+                } else if (ele.postDate.includes('2019-03')) {
+                    marTotal += ele.amount.amount;
+                    if (marCategories[ele.category] === undefined) {
+                        marCategories[ele.category] = 0
+                    }
+                    marCategories[ele.category] += ele.amount.amount;
+                    marExpenses.push({ele});
+                } 
+            }
+        })
+
+        const totalExpenses = [janTotal, febTotal, marTotal]
+        const janExpenseTotals = [];
+        for (let i = 0; i < Object.values(janCategories).length; i++) {
+            janExpenseTotals.push(Object.values(janCategories)[i]);
+        }
 
         return (
             <div className="chart_section">
@@ -130,10 +216,17 @@ class Chart extends Component {
                     />
                 </div>
                 <div className="expense_chart">
-                    <Pie 
+                    {/* <button onClick={() => janClick()}>January</button> */}
+                    {/* <button onClick={() => febClick()}>February</button> */}
+                    {/* <button onClick={() => marClick()}>March</button> */}
+
+                    <Doughnut 
                     data={{
-                        labels: this.state.pieData.labels,
-                        datasets: this.state.pieData.datasets
+                        labels: Object.keys(janCategories),
+                        datasets: [{
+                            data: janExpenseTotals,
+                            backgroundColor: [ 'red', 'blue', 'green']
+                        }]
                     }}
                     // height='100%'
                     />
