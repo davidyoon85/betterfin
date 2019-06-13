@@ -109,10 +109,6 @@ img {
     font-size: 1.2em;
 }
 
-.user-name:hover {
-    color: rgb(246, 102, 82);
-}
-
 .menu {
     margin: 0;
     box-sizing: border-box;
@@ -127,7 +123,11 @@ img {
     margin-left: 6px;
 }
 
-.subMenu:hover {
+.nav-right {
+    display: flex;
+}
+
+.nav-right:hover {
     color: rgb(246, 102, 82);
 }
 

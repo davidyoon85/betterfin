@@ -41,12 +41,14 @@ class Nav extends Component {
 
                                 </div>
                             </div>
-                            <div className="user-name">
-                                {this.state.user_name}
-                            </div>
-                            <div className="menu">
-                                <div className="subMenu">
-                                <svg className="subMenu_svg" fill="currentColor" height="16" width="16" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path></svg>
+                            <div className="nav-right">
+                                <div className="user-name">
+                                    {this.state.user_name}
+                                </div>
+                                <div className="menu">
+                                    <div className="subMenu">
+                                    <svg className="subMenu_svg" fill="currentColor" height="16" width="16" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path></svg>
+                                    </div>
                                 </div>
                             </div>
                         </div>
