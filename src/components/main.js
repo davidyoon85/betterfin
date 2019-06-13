@@ -8,6 +8,11 @@ import Table from './table';
 const data = require('../data/data.json');
 
 class Main extends Component {
+
+    getData() {
+        
+    }
+
     render() {
         return (
             <div>

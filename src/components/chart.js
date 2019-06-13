@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
-import { Line } from 'react-chartjs-2';
+import { Line, Pie } from 'react-chartjs-2';
 
 const data = require('../data/data.json');
 
@@ -11,6 +11,7 @@ class Chart extends Component {
 
         this.state = {
             data: data,
+            trxs: data.trxs.transaction,
             chartData: {
                 labels: data.balances[0].month_labels,
                 datasets: [
@@ -22,6 +23,13 @@ class Chart extends Component {
                         pointBackgroundColor: 'rgba(246,102,82)',
                     }
                 ]
+            },
+            pieData: {
+                labels: data.balances[0].month_labels,
+                datasets:[{
+                    data: [10, 20, 30],
+                    backgroundColor: [ 'red', 'blue', 'green']
+                }]
             }
         }
 
@@ -29,27 +37,53 @@ class Chart extends Component {
     }
 
     componentDidMount() {
-        // this.createBalanceChart() 
+        
     }
 
     render() {
+        const janExpenses = [];
+        const janCategories = {};
+        let janTotal = 0;
+        const febExpenses = [];
+        const febCategories = {};
+        let febTotal = 0;
+        const marExpenses = [];
+        const marCategories = {};
+        let marTotal = 0;
+
+        this.state.trxs.forEach((ele) => {
+            // debugger
+            if (ele.baseType === 'DEBIT') {
+                if (ele.postDate.includes('2019-01')) {
+                    janTotal += ele.amount.amount;
+                    let count = 0;
+                    janCategories[ele.category] = count + ele.amount.amount;
+                    janExpenses.push({ele});
+                } else if (ele.postDate.includes('2019-02')) {
+                    febTotal += ele.amount.amount;
+                    febCategories[ele.category] = 0;
+                    febCategories[ele.category] += ele.amount.amount;
+                    febExpenses.push({ele});
+                } else if (ele.postDate.includes('2019-03')) {
+                    marTotal += ele.amount.amount;
+                    marCategories[ele.category] = 0;
+                    marCategories[ele.category] += ele.amount.amount;
+                    marExpenses.push({ele});
+                } 
+            }
+        })
+        debugger
+        const totalExpenses = [janTotal, febTotal, marTotal]
+
+
+
         return (
             <div className="chart_section">
                 <div className="balance_chart">
                     <div className="chart_header">Average Cash Balance</div>
                     <Line 
                         data={this.state.chartData}
-                        // width={500}
-                        // height={500}
                         options={{ 
-                            
-                            // title:{
-                            //     display: true,
-                            //     text: 'Monthly Averages',
-                            //     fontColor: '#898B96',
-                            //     fontSize: 20,
-                            //     position: 'top'
-                            // },
                             legend:{
                                 display: false
                             },
@@ -76,6 +110,9 @@ class Chart extends Component {
                             },
                             tooltips: {
                                 enabled: true,
+                                callbacks: {
+                                    label: function(tooltipItem, data) {
+                                        return tooltipItem.yLabel.toString().replace(/^/gm, "$"); }, },
                                 backgroundColor: 'white',
                                 borderColor: 'rgba(246,102,82)',
                                 borderWidth: 2,
@@ -85,7 +122,7 @@ class Chart extends Component {
                                 bodyFontStyle: 'bold',
                                 xPadding: 15,
                                 yPadding: 15,
-                                displayColors: false
+                                displayColors: false,
                             },
                             // maintainAspectRatio: false,
                             responsive: true,
@@ -93,7 +130,13 @@ class Chart extends Component {
                     />
                 </div>
                 <div className="expense_chart">
-                    
+                    <Pie 
+                    data={{
+                        labels: this.state.pieData.labels,
+                        datasets: this.state.pieData.datasets
+                    }}
+                    // height='100%'
+                    />
                 </div>
             </div>
         )
