@@ -12,6 +12,7 @@ class Main extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            data: data,
             trxs: data.trxs.transaction,
             monthExpenseTotals: {}
         }
@@ -28,24 +29,28 @@ class Main extends Component {
         const febCategories = {};
         const marCategories = {};
 
+        let janTotal = 0;
+        let febTotal = 0;
+        let marTotal = 0;
+
         this.state.trxs.forEach((ele) => {
             if (ele.baseType === 'DEBIT') {
                 if (ele.postDate.includes('2019-01')) {
-                    // this.state.janTotal += ele.amount.amount;
+                    janTotal += ele.amount.amount;
                     if (janCategories[ele.category] === undefined) {
                         janCategories[ele.category] = 0
                     }
                     janCategories[ele.category] += ele.amount.amount;
                     // this.setState({ janExpenses: ele });
                 } else if (ele.postDate.includes('2019-02')) {
-                    // this.state.febTotal += ele.amount.amount;
+                    febTotal += ele.amount.amount;
                     if (febCategories[ele.category] === undefined) {
                         febCategories[ele.category] = 0
                     }
                     febCategories[ele.category] += ele.amount.amount;
                     // this.setState({ febExpenses: ele });
                 } else if (ele.postDate.includes('2019-03')) {
-                    // this.state.marTotal += ele.amount.amount;
+                    marTotal += ele.amount.amount;
                     if (marCategories[ele.category] === undefined) {
                         marCategories[ele.category] = 0
                     }
@@ -54,6 +59,9 @@ class Main extends Component {
                 } 
             }
         })
+
+        const monthLabels = ['Jan', 'Feb', 'Mar']
+        const monthTotals = [janTotal, febTotal, marTotal]
 
         const janCategoriesTotals = [];
         const febCategoriesTotals = [];
@@ -87,7 +95,7 @@ class Main extends Component {
             marExpenseTotals.push(Object.values(marCategories)[i]);
         }
 
-        const monthlyExpenseTotals = {janCategoriesTotals, janExpenseTotals, febCategoriesTotals, febExpenseTotals, marCategoriesTotals, marExpenseTotals}
+        const monthlyExpenseTotals = {monthLabels, monthTotals, janCategoriesTotals, janExpenseTotals, febCategoriesTotals, febExpenseTotals, marCategoriesTotals, marExpenseTotals}
         
         this.setState({ monthExpenseTotals: monthlyExpenseTotals })
     }
@@ -105,7 +113,7 @@ class Main extends Component {
                     </div>
 
                     <div className="chart_container">
-                        <Chart />
+                        <Chart monthExpenseTotals={monthExpenseTotals}/>
                         <Pie monthExpenseTotals={monthExpenseTotals}/>
                     </div>
 

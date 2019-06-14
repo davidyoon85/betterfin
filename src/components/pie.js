@@ -5,11 +5,9 @@ import { Doughnut } from 'react-chartjs-2';
 class Pie extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
   }
 
   render() {
-debugger
     return (
       <Doughnut 
         data={{

@@ -12,40 +12,27 @@ class Chart extends Component {
         this.state = {
             data: data,
             trxs: data.trxs.transaction,
-            monthly: {},
-            chartData: {
-                labels: data.balances[0].month_labels,
-                datasets: [
-                    {
-                        data: data.balances[0].month_average_values,
-                        borderColor: 'rgba(246,102,82)',
-                        backgroundColor: 'transparent',
-                        pointBackgroundColor: 'rgba(246,102,82)',
-                    }
-                ]
-            },
-            pieData: {
-                labels: data.balances[0].month_labels,
-                datasets:[{
-                    data: [10, 20, 30],
-                    backgroundColor: [ 'red', 'blue', 'green']
-                }]
-            }
         }
     }
 
-    componentDidMount() {
-        // this.getData();
-    }
-
     render() {
-
+debugger
         return (
             <div className="chart_section">
                 <div className="balance_chart">
                     <div className="chart_header">Average Cash Balance</div>
                     <Line 
-                        data={this.state.chartData}
+                        data={{
+                            labels: this.props.monthExpenseTotals.monthLabels,
+                            datasets: [
+                        {
+                            data: this.props.monthExpenseTotals.monthTotals,
+                            borderColor: 'rgba(246,102,82)',
+                            backgroundColor: 'transparent',
+                            pointBackgroundColor: 'rgba(246,102,82)',
+                        }
+                        ]
+                        }}
                         options={{ 
                             legend:{
                                 display: false
@@ -59,7 +46,7 @@ class Chart extends Component {
                                     },
                                     ticks: {
                                         beginAtZero:true,
-                                        max: Math.round( (1.5 * Math.max(...this.state.data.balances[0].month_average_values)) / 50) * 50,
+                                        max: Math.round( (1.5 * Math.max.apply(null, this.props.monthExpenseTotals.monthTotals)) / 500) * 500,
                                         fontStyle: 'bold',
 
                                     }
@@ -91,13 +78,6 @@ class Chart extends Component {
                             responsive: true,
                         }}
                     />
-                </div>
-                <div className="expense_chart">
-                    {/* <button onClick={() => janClick()}>January</button> */}
-                    {/* <button onClick={() => febClick()}>February</button> */}
-                    {/* <button onClick={() => marClick()}>March</button> */}
-
-                    
                 </div>
             </div>
         )
