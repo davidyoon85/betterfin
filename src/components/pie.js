@@ -29,7 +29,28 @@ class Pie extends React.Component {
                     padding: 25
                   }
               },
+              tooltips: {
+                enabled: true,
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        const category = data.labels[tooltipItem.index];
+                        const expense = (data.datasets[0].data[tooltipItem.index]).toLocaleString('USD', { style: 'currency', currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        return category + '  ' + expense }, },
+                backgroundColor: 'white',
+                borderColor: 'rgba(246,102,82)',
+                borderWidth: 2,
+                titleFontSize: 14,
+                titleFontColor: 'rgba(246,102,82)',
+                bodyFontColor: 'rgba(246,102,82)',
+                bodyFontStyle: 'bold',
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+            },
+              maintainAspectRatio: true,
+              responsive: true,
             }}
+            
           />
         </div>
       </div>
