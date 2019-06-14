@@ -16,11 +16,10 @@ class Chart extends Component {
     }
 
     render() {
-debugger
         return (
             <div className="chart_section">
                 <div className="balance_chart">
-                    <div className="chart_header">Average Cash Balance</div>
+                    <div className="chart_header">Monthly Expenses</div>
                     <Line 
                         data={{
                             labels: this.props.monthExpenseTotals.monthLabels,

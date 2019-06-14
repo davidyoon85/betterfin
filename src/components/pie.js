@@ -9,15 +9,30 @@ class Pie extends React.Component {
 
   render() {
     return (
-      <Doughnut 
-        data={{
-          labels: this.props.monthExpenseTotals.janCategoriesTotals,
-          datasets: [{
-            data: this.props.monthExpenseTotals.janExpenseTotals,
-            backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958', '#FDEB00', '#52a7f6', '#7b52f6', '#cdf652' ]
-          }]
-        }}
-      />
+      <div className="pie_section">
+        <div className="pie_chart">
+          <div className="pie_header">Expenses Details</div>
+          <Doughnut 
+            data={{
+              labels: this.props.monthExpenseTotals.janCategoriesTotals,
+              datasets: [{
+                data: this.props.monthExpenseTotals.janExpenseTotals,
+                backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958', '#FDEB00', '#52a7f6', '#7b52f6', '#cdf652' ]
+              }]
+            }}
+            options={{ 
+              legend:{
+                  display: true,
+                  position: 'right',
+                  labels: {
+                    fontSize: 20,
+                    padding: 25
+                  }
+              },
+            }}
+          />
+        </div>
+      </div>
     );
   }
 }

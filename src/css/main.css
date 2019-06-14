@@ -249,7 +249,17 @@ img {
     height: 30%;
 }
 
+.pie_section {
+    height: 30%;
+}
+
 .balance_chart {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.pie_chart {
     height: 100%;
     width: 100%;
     margin-bottom: 5%;
@@ -263,6 +273,13 @@ canvas {
 }
 
 .chart_header {
+    color: #898B96;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 5%;
+}
+
+.pie_header {
     color: #898B96;
     font-weight: 700;
     font-size: 1.4em;
