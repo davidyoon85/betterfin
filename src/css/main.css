@@ -145,10 +145,11 @@ img {
 /* page content */
 
 .pageContent {
-    height: 90vh;
+    height: 100vh;
+    width: 100vw;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 48px 6px;
+    padding: 48px 0px;
 }
 
 .profile_container {
@@ -183,6 +184,7 @@ img {
 
 .ReactTable .rt-tbody .rt-td {
     text-align: center;
+    width: 85px !important;
 }
 
 .rt-thead {
@@ -190,10 +192,19 @@ img {
     color: white;
     font-size: 1.1em;
     font-weight: 700;
+    min-width: 340px !important;
+}
+
+.rt-th {
+    width: 85px !important;
 }
 
 .-header {
     line-height: 2;
+}
+
+.rt-tbody {
+    min-width: 340px !important;
 }
 
 .ReactTable .rt-tbody .rt-tr-group:nth-child(n) {
@@ -321,7 +332,7 @@ canvas {
         width: 100%;
         margin: 0 auto;
         font-size: .8em;
-        min-width: 380px;
+        min-width: 360px;
     }
 
     .profile_main {
@@ -340,7 +351,7 @@ canvas {
         width: 100%;
         margin: 0 auto;
         font-size: .7em;
-        min-width: 380px;
+        min-width: 360px;
     }
 
     .pie_buttons > button {
@@ -352,10 +363,14 @@ canvas {
         width: 100%;
         margin: 0 auto;
         font-size: .8em;
-        min-width: 400px;
+        min-width: 360px;
     }
 
     .rt-tr {
         padding: 3px 0px;
     }
+}
+
+@media screen and (max-width:400px) {
+
 }
