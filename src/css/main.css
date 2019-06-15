@@ -318,10 +318,10 @@ canvas {
 
  @media screen and (max-width:600px) {
     .profile_container {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         font-size: .8em;
-        min-width: 400px;
+        min-width: 380px;
     }
 
     .profile_main {
@@ -337,16 +337,25 @@ canvas {
     }
 
     .table_container {
-        width: 80%;
+        width: 100%;
+        margin: 0 auto;
+        font-size: .7em;
+        min-width: 380px;
+    }
+
+    .pie_buttons > button {
+        width: 40%;
+        height: 25px;
+    }
+
+    .chart_container {
+        width: 100%;
         margin: 0 auto;
         font-size: .8em;
         min-width: 400px;
     }
 
-    .chart_container {
-        width: 80%;
-        margin: 0 auto;
-        font-size: .8em;
-        min-width: 400px;
+    .rt-tr {
+        padding: 3px 0px;
     }
 }

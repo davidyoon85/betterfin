@@ -58,14 +58,24 @@ class Pie extends React.Component {
                 display: true,
                 position: 'bottom',
                 labels: {
-                  fontSize: 15,
+                  fontSize: 12,
                   padding: 15,
                   usePointStyle: true
                 }
               },
+              layout: {
+                padding: {
+                    left: -10,
+                    right: -10,
+                    top: -10,
+                    bottom: -5
+                }
+              },
               title:{
                 display: true,
-                text: 'Janurary'
+                text: 'Janurary',
+                padding: 10,
+                fontSize: 20
               },
               tooltips: {
                 enabled: true,
