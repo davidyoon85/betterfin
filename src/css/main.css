@@ -31,6 +31,10 @@ a {
     color: black;
  }
 
+ button:hover {
+     cursor: pointer;
+     opacity: .5;
+ }
 
 /* nav bar */
 
@@ -101,6 +105,7 @@ img {
     display: inline-block; 
     vertical-align: middle;
     padding-right: 12px;
+    fill: #68968d;
 }
 
 .user-name {
@@ -246,11 +251,11 @@ img {
 
 .chart_section {
     display: flex;
-    height: 30%;
+    height: 60%;
 }
 
 .pie_section {
-    height: 30%;
+    height: 60%;
 }
 
 .balance_chart {
@@ -283,5 +288,28 @@ canvas {
     color: #898B96;
     font-weight: 700;
     font-size: 1.4em;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
+
+.pie_buttons {
+    display: flex;
+    width: 40%;
+    margin-bottom: 1%;
+}
+
+.pie_buttons > button {
+    background: #f66652;
+    border: 1px solid #f66652;
+    padding: 5px;
+    color: #fff;
+    margin: 0px 6px 6px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 30%;
+    border-radius: 15px;
+    outline: none;
+ }

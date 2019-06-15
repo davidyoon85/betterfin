@@ -36,9 +36,11 @@ class Pie extends React.Component {
       <div className="pie_section">
         <div className="pie_chart">
           <div className="pie_header">Expenses Details</div>
-          <button name="January" onClick={this.clickHandler}>January</button>
-          <button name="February" onClick={this.clickHandler}>February</button>
-          <button name="March" onClick={this.clickHandler}>March</button>
+          <div className="pie_buttons">
+            <button name="January" onClick={this.clickHandler}>January</button>
+            <button name="February" onClick={this.clickHandler}>February</button>
+            <button name="March" onClick={this.clickHandler}>March</button>
+          </div>
           <Doughnut 
             ref={this.pieRef}
             data={{
@@ -50,12 +52,16 @@ class Pie extends React.Component {
             }}
             options={{ 
               legend:{
-                  display: true,
-                  position: 'right',
-                  labels: {
-                    fontSize: 15,
-                    padding: 25
-                  }
+                onHover: function(e) {
+                  e.target.style.cursor = 'pointer';
+                },
+                display: true,
+                position: 'bottom',
+                labels: {
+                  fontSize: 15,
+                  padding: 15,
+                  usePointStyle: true
+                }
               },
               title:{
                 display: true,
@@ -79,7 +85,7 @@ class Pie extends React.Component {
                 yPadding: 15,
                 displayColors: false,
             },
-              maintainAspectRatio: true,
+              // maintainAspectRatio: true,
               responsive: true,
             }}
             
