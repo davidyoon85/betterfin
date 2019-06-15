@@ -6,26 +6,31 @@ class Pie extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.clickHandler = this.clickHandler.bind(this);
+    this.pieRef = React.createRef();
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   clickHandler(e) {
     if (e.target.name === 'January') {
-
-    } 
+      this.pieRef.current.chartInstance.update();
+    } else if (e.target.name === 'February') {
     
+    } else if (e.target.name === 'March') {
+
+    }
   }
 
   render() {
+    debugger
     return (
       <div className="pie_section">
         <div className="pie_chart">
           <div className="pie_header">Expenses Details</div>
-          <button name="January" onClick={this.clickHandler.bind(this)}>January</button>
-          <button name="February" onClick={this.clickHandler.bind(this)}>February</button>
-          <button name="March" onClick={this.clickHandler.bind(this)}>March</button>
+          <button name="January" onClick={this.clickHandler}>January</button>
+          <button name="February" onClick={this.clickHandler}>February</button>
+          <button name="March" onClick={this.clickHandler}>March</button>
           <Doughnut 
-          ref={'doughnut'}
+            ref={this.pieRef}
             data={{
               labels: this.props.monthExpenseTotals.janCategoriesTotals,
               datasets: [{
@@ -38,7 +43,7 @@ class Pie extends React.Component {
                   display: true,
                   position: 'right',
                   labels: {
-                    fontSize: 20,
+                    fontSize: 15,
                     padding: 25
                   }
               },
