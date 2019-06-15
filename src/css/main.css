@@ -236,6 +236,15 @@ img {
     margin: 0 auto;
 }
 
+@media screen and (max-width:600px) {
+    .table_container {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 400px;
+    }
+  }
+
 .table_header {
     color: #898B96;
     font-weight: 700;
