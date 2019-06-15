@@ -11,8 +11,27 @@ class Pie extends React.Component {
   }
 
   clickHandler(e) {
-    if (e.target.name === 'January') {
-      this.pieRef.current.chartInstance.update();
+    let currentPie = this.pieRef.current.chartInstance;
+    let pieData = currentPie.config.data.datasets[0].data;
+    let pieLabels = pieData.labels;
+
+    let newData = [{
+      data: this.props.monthExpenseTotals.febExpenseTotals,
+      backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958' ]
+    }]
+
+    if (e.target.name === 'January') {    
+    debugger      
+      currentPie.config.data.datasets[0].data = [];
+      currentPie.config.data.labels = [];
+      debugger
+      // currentPie.data.data
+      currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.febExpenseTotals;
+      currentPie.config.data.labels = this.props.monthExpenseTotals.febCategoriesTotals;
+      // pieData = newData
+      // pieLabels = this.props.monthExpenseTotals.febCategoriesTotals
+      debugger
+      currentPie.update();
     } else if (e.target.name === 'February') {
     
     } else if (e.target.name === 'March') {
@@ -21,7 +40,6 @@ class Pie extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="pie_section">
         <div className="pie_chart">
