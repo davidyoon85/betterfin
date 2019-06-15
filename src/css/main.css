@@ -167,7 +167,7 @@ img {
 .profile_main h1 {
     font-size: 2.5em;
     font-weight: 400;
-    margin: 0 0 24px 0;
+    margin-bottom: 24px;
 }
 
 .profile_main h2 {
@@ -236,15 +236,6 @@ img {
     margin: 0 auto;
 }
 
-@media screen and (max-width:600px) {
-    .table_container {
-        width: 80%;
-        margin: 0 auto;
-        font-size: .8em;
-        min-width: 400px;
-    }
-}
-
 .table_header {
     color: #898B96;
     font-weight: 700;
@@ -256,15 +247,6 @@ img {
 .chart_container {
     width: 80%;
     margin: 0 auto;
-}
-
-@media screen and (max-width:600px) {
-    .chart_container {
-        width: 80%;
-        margin: 0 auto;
-        font-size: .8em;
-        min-width: 400px;
-    }
 }
 
 .chart_section {
@@ -331,3 +313,40 @@ canvas {
     border-radius: 15px;
     outline: none;
  }
+
+/* mobile */
+
+ @media screen and (max-width:600px) {
+    .profile_container {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 400px;
+    }
+
+    .profile_main {
+        margin-bottom: 5%;
+    }
+
+    .profile_main > h1 {
+        margin-bottom: 12px;
+    }
+
+    .profile_main > h2 {
+        font-size: 1.6em;
+    }
+
+    .table_container {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 400px;
+    }
+
+    .chart_container {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 400px;
+    }
+}
