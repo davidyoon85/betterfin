@@ -5,6 +5,16 @@ import { Doughnut } from 'react-chartjs-2';
 class Pie extends React.Component {
   constructor(props) {
     super(props);
+
+    // this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  clickHandler(e) {
+    debugger
+    if (e.target.name === 'January') {
+      debugger
+    } 
+    
   }
 
   render() {
@@ -12,7 +22,11 @@ class Pie extends React.Component {
       <div className="pie_section">
         <div className="pie_chart">
           <div className="pie_header">Expenses Details</div>
+          <button name="January" onClick={this.clickHandler.bind(this)}>January</button>
+          <button name="February" onClick={this.clickHandler.bind(this)}>February</button>
+          <button name="March" onClick={this.clickHandler.bind(this)}>March</button>
           <Doughnut 
+          ref={'doughnut'}
             data={{
               labels: this.props.monthExpenseTotals.janCategoriesTotals,
               datasets: [{
