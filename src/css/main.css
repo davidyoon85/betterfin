@@ -243,7 +243,7 @@ img {
         font-size: .8em;
         min-width: 400px;
     }
-  }
+}
 
 .table_header {
     color: #898B96;
@@ -256,6 +256,15 @@ img {
 .chart_container {
     width: 80%;
     margin: 0 auto;
+}
+
+@media screen and (max-width:600px) {
+    .chart_container {
+        width: 80%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 400px;
+    }
 }
 
 .chart_section {
