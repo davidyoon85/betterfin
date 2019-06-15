@@ -12,30 +12,22 @@ class Pie extends React.Component {
 
   clickHandler(e) {
     let currentPie = this.pieRef.current.chartInstance;
-    let pieData = currentPie.config.data.datasets[0].data;
-    let pieLabels = pieData.labels;
 
-    let newData = [{
-      data: this.props.monthExpenseTotals.febExpenseTotals,
-      backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958' ]
-    }]
-
-    if (e.target.name === 'January') {    
-    debugger      
-      currentPie.config.data.datasets[0].data = [];
-      currentPie.config.data.labels = [];
-      debugger
-      // currentPie.data.data
-      currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.febExpenseTotals;
-      currentPie.config.data.labels = this.props.monthExpenseTotals.febCategoriesTotals;
-      // pieData = newData
-      // pieLabels = this.props.monthExpenseTotals.febCategoriesTotals
-      debugger
+    if (e.target.name === 'January') {        
+      currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.janExpenseTotals;
+      currentPie.config.data.labels = this.props.monthExpenseTotals.janCategoriesTotals;
+      currentPie.config.options.title.text = 'January';
       currentPie.update();
     } else if (e.target.name === 'February') {
-    
+      currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.febExpenseTotals;
+      currentPie.config.data.labels = this.props.monthExpenseTotals.febCategoriesTotals;
+      currentPie.config.options.title.text = 'February';
+      currentPie.update();
     } else if (e.target.name === 'March') {
-
+      currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.marExpenseTotals;
+      currentPie.config.data.labels = this.props.monthExpenseTotals.marCategoriesTotals;
+      currentPie.config.options.title.text = 'March';
+      currentPie.update();
     }
   }
 
@@ -64,6 +56,10 @@ class Pie extends React.Component {
                     fontSize: 15,
                     padding: 25
                   }
+              },
+              title:{
+                display: true,
+                text: 'Janurary'
               },
               tooltips: {
                 enabled: true,
