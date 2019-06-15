@@ -5,6 +5,7 @@ import UserProfile from './user_profile';
 import Chart from './chart';
 import Pie from './pie';
 import Table from './table';
+import Footer from './footer';
 
 const data = require('../data/data.json');
 
@@ -119,6 +120,10 @@ class Main extends Component {
 
                     <div className="table_container">
                         <Table />
+                    </div>
+                    
+                    <div className="footer_container">
+                        <Footer />
                     </div>
                 </div>
             </div>
