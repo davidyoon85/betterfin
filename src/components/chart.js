@@ -61,7 +61,6 @@ class Chart extends Component {
                                 enabled: true,
                                 callbacks: {
                                     label: function(tooltipItem, data) {
-                                        debugger
                                         return tooltipItem.yLabel.toString().replace(/^/gm, "$"); }, },
                                 backgroundColor: 'white',
                                 borderColor: 'rgba(246,102,82)',

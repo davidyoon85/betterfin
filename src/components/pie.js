@@ -10,9 +10,8 @@ class Pie extends React.Component {
   }
 
   clickHandler(e) {
-    debugger
     if (e.target.name === 'January') {
-      debugger
+
     } 
     
   }
