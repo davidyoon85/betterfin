@@ -548,6 +548,14 @@ canvas {
 }
 
 @media (max-width: 767px) {
+    span > select {
+        display: none;
+    }
+
+    .select-wrap {
+        display: none;
+    }
+
     .footer-left {
         width: 100%;
     }
@@ -567,6 +575,14 @@ canvas {
 }
 
 @media (max-width: 479px) {
+    .profile_main > h1 {
+        font-size: 2.2em;
+    }
+
+    .profile_main > h2 {
+        font-size: 1.3em;
+    }
+
     canvas {
         width: 95% !important;
         margin: 0 auto;
