@@ -18,9 +18,14 @@ class Nav extends Component {
     formatUserName() {
         let name = this.state.data.accounts.account[0].displayedName;
         name = name.toLowerCase()
-            .split(' ')
+        .split(' ')
             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-            .join(' ');
+
+        // name[0].charAt(0).toUpperCase();
+        name = name[0] + ' ' + name[1].slice(0,1)
+        debugger
+        //     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        //     .join(' ');
         
         this.setState({ user_name: name });
     }
