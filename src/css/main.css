@@ -221,7 +221,12 @@ img {
 }
 
 .ReactTable.-striped .rt-tr.-odd {
-    background: white;
+    background: white !important;
+}
+
+.ReactTable.-striped .rt-tr.-odd:hover {
+    background: #f66652 !important;
+    color: black !important;
 }
 
 .ReactTable .-pagination .-btn {
