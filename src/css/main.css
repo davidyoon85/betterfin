@@ -141,7 +141,6 @@ img {
     vertical-align: middle
 }
 
-
 /* page content */
 
 .pageContent {
@@ -151,6 +150,8 @@ img {
     margin: 0 auto;
     padding: 48px 0px;
 }
+
+/* Profile */
 
 .profile_container {
     display: flex;
@@ -176,6 +177,8 @@ img {
     font-weight: 400;
     margin-bottom: 5%;
 }
+
+/* Charts */
 
 .ReactTable {
     box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
@@ -446,9 +449,6 @@ canvas {
 }
 
 .footer_info {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -470,12 +470,16 @@ canvas {
 
 /* mobile */
 
- @media screen and (max-width:600px) {
+@media screen and (max-width:600px) {
+    .pageContent {
+        width: 95%;
+    }
+    
     .profile_container {
         width: 100%;
         margin: 0 auto;
         font-size: .8em;
-        min-width: 360px;
+        min-width: 340px;
     }
 
     .profile_main {
@@ -494,7 +498,7 @@ canvas {
         width: 100%;
         margin: 0 auto;
         font-size: .7em;
-        min-width: 360px;
+        min-width: 340px;
     }
 
     .pie_buttons > button {
@@ -506,7 +510,7 @@ canvas {
         width: 100%;
         margin: 0 auto;
         font-size: .8em;
-        min-width: 360px;
+        min-width: 340px;
     }
 
     .rt-tr {
@@ -549,6 +553,16 @@ canvas {
 }
 
 @media (max-width: 479px) {
+    canvas {
+        width: 95% !important;
+        margin: 0 auto;
+    }
+
+    .ReactTable {
+        width: 95%;
+        margin: 0 auto;
+    }
+
     .footer-menu {
         flex-direction: column;
         align-items: flex-start;
