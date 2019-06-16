@@ -31,7 +31,7 @@ class Nav extends Component {
             <div className="navContent">
                 <div className="navHeader">
                     <div className="betterfin-logo">
-                        <img src="https://camp-away-dev.s3.amazonaws.com/betterfin_logo.svg" />
+                        <a className="footer-img" href="/"><img src="https://camp-away-dev.s3.amazonaws.com/betterfin_logo.svg" /></a>
                     </div>
                     <div className="drop-menu">
                         <div className="logout">
