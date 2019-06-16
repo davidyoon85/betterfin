@@ -31,10 +31,16 @@ a {
     color: black;
  }
 
- button:hover {
-     cursor: pointer;
-     opacity: .5;
- }
+button:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 /* nav bar */
 
@@ -231,7 +237,7 @@ img {
 
 .ReactTable .-pagination .-btn {
     background: #f66652 !important;
-    color: white;
+    color: white !important;
     font-weight: 700;
 }
 
@@ -280,13 +286,13 @@ img {
 .balance_chart {
     height: 100%;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .pie_chart {
     height: 100%;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 canvas {
@@ -304,6 +310,8 @@ canvas {
 }
 
 .pie_header {
+    display: flex;
+    justify-content: space-between;
     color: #898B96;
     font-weight: 700;
     font-size: 1.4em;
@@ -312,6 +320,7 @@ canvas {
 
 .pie_buttons {
     display: flex;
+    justify-content: flex-end;
     width: 40%;
     margin-bottom: 1%;
 }
@@ -324,11 +333,11 @@ canvas {
     margin: 0px 6px 6px 0px;
     display: flex;
     align-items: center;
-    font-size: 1em;
+    font-size: .7em;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    width: 30%;
+    width: 25%;
     border-radius: 15px;
     outline: none;
  }

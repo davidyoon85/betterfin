@@ -35,11 +35,12 @@ class Pie extends React.Component {
     return (
       <div className="pie_section">
         <div className="pie_chart">
-          <div className="pie_header">Expenses Details</div>
-          <div className="pie_buttons">
-            <button name="January" onClick={this.clickHandler}>January</button>
-            <button name="February" onClick={this.clickHandler}>February</button>
-            <button name="March" onClick={this.clickHandler}>March</button>
+          <div className="pie_header">Expenses Details
+            <div className="pie_buttons">
+              <button name="January" onClick={this.clickHandler}>January</button>
+              <button name="February" onClick={this.clickHandler}>February</button>
+              <button name="March" onClick={this.clickHandler}>March</button>
+            </div>
           </div>
           <Doughnut 
             ref={this.pieRef}
