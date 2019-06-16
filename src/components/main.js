@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/main.css';
 
 import Nav from './nav';
 import UserProfile from './user_profile';
@@ -6,6 +7,7 @@ import Chart from './chart';
 import Pie from './pie';
 import Table from './table';
 import Footer from './footer';
+
 
 const data = require('../data/data.json');
 
@@ -26,6 +28,7 @@ class Main extends Component {
     }
 
     getData() {
+        debugger
         const janCategories = {};
         const febCategories = {};
         const marCategories = {};
@@ -42,21 +45,18 @@ class Main extends Component {
                         janCategories[ele.category] = 0
                     }
                     janCategories[ele.category] += ele.amount.amount;
-                    // this.setState({ janExpenses: ele });
                 } else if (ele.postDate.includes('2019-02')) {
                     febTotal += ele.amount.amount;
                     if (febCategories[ele.category] === undefined) {
                         febCategories[ele.category] = 0
                     }
                     febCategories[ele.category] += ele.amount.amount;
-                    // this.setState({ febExpenses: ele });
                 } else if (ele.postDate.includes('2019-03')) {
                     marTotal += ele.amount.amount;
                     if (marCategories[ele.category] === undefined) {
                         marCategories[ele.category] = 0
                     }
                     marCategories[ele.category] += ele.amount.amount;
-                    // this.setState({ marExpenses: ele });
                 } 
             }
         })
@@ -102,11 +102,15 @@ class Main extends Component {
     }
 
     render() {
+        const userName = this.state.data.accounts.account[0].displayedName;
+        const transactions = this.state.data.trxs.transaction;
         const { monthExpenseTotals } = this.state;
+
+
         return (
             <div>
                 <div>
-                    <Nav />
+                    <Nav userName={userName}/>
                 </div>
                 <div className="pageContent">
                     <div className="profile_container">
@@ -119,7 +123,7 @@ class Main extends Component {
                     </div>
 
                     <div className="table_container">
-                        <Table />
+                        <Table transactions={transactions}/>
                     </div>
                     
                     <div className="footer_container">

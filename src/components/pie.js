@@ -95,7 +95,6 @@ class Pie extends React.Component {
                 yPadding: 15,
                 displayColors: false,
             },
-              // maintainAspectRatio: true,
               responsive: true,
             }}
             

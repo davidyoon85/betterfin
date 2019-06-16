@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import * as d3 from 'd3';
 
 import { Line } from 'react-chartjs-2';
-
-const data = require('../data/data.json');
 
 class Chart extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            data: data,
-            trxs: data.trxs.transaction,
-        }
     }
 
     render() {
@@ -73,7 +65,6 @@ class Chart extends Component {
                                 yPadding: 15,
                                 displayColors: false,
                             },
-                            // maintainAspectRatio: false,
                             responsive: true,
                         }}
                     />

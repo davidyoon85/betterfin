@@ -4,18 +4,14 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 import '../css/main.css';
 
-const data = require('../data/data.json');
-
 class Table extends React.Component {
   constructor() {
     super();
-    this.state = {
-      data: data.trxs.transaction
-    };
   }
 
   render() {
-    const { data } = this.state;
+    debugger
+    const data = this.props.transactions;
     return (
       <div>
         <div className="table_header">Transaction List</div>

@@ -17,7 +17,6 @@ class Footer extends Component {
                             <a href="/terms" className="footer-link">TERMS&nbsp;OF&nbsp;Service</a>
                             <a href="/help-center" className="footer-link">718-416-9507</a>
                         </div>
-                        {/* <div className="footer-right"></div> */}
                         <div className="footer-bottom">
                             <div className="footer_social">
                                 <a className="footer_social_icon" href="https://twitter.com/betterfin">
