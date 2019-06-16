@@ -225,7 +225,7 @@ img {
 }
 
 .ReactTable .-pagination .-btn {
-    background: #f66652;
+    background: #f66652 !important;
     color: white;
     font-weight: 700;
 }

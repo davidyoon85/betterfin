@@ -10,7 +10,6 @@ class Table extends React.Component {
   }
 
   render() {
-    debugger
     const data = this.props.transactions;
     return (
       <div>

@@ -28,7 +28,6 @@ class Main extends Component {
     }
 
     getData() {
-        debugger
         const janCategories = {};
         const febCategories = {};
         const marCategories = {};
