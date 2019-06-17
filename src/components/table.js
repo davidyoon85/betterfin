@@ -5,10 +5,6 @@ import "react-table/react-table.css";
 import '../css/main.css';
 
 class Table extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const data = this.props.transactions;
     return (

@@ -29,7 +29,7 @@ class Nav extends Component {
             <div className="navContent">
                 <div className="navHeader">
                     <div className="betterfin-logo">
-                        <a className="footer-img" href="/"><img src="https://camp-away-dev.s3.amazonaws.com/betterfin_logo.svg" /></a>
+                        <a className="footer-img" href="/"><img src="https://camp-away-dev.s3.amazonaws.com/betterfin_logo.svg" alt="Nav" /></a>
                     </div>
                     <div className="drop-menu">
                         <div className="logout">

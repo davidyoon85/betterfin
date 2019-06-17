@@ -105,7 +105,6 @@ class Main extends Component {
         const transactions = this.state.data.trxs.transaction;
         const { monthExpenseTotals } = this.state;
 
-
         return (
             <div>
                 <div>

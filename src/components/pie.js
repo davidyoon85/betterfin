@@ -13,17 +13,20 @@ class Pie extends React.Component {
   clickHandler(e) {
     let currentPie = this.pieRef.current.chartInstance;
 
-    if (e.target.name === 'January') {        
+    if (e.target.name === 'January') {      
+      currentPie.config.data.datasets[0].backgroundColor = ['#f66652', '#537871', '#52f6a1', '#A7C958', '#FDEB00', '#52a7f6', '#7b52f6', '#cdf652'] 
       currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.janExpenseTotals;
       currentPie.config.data.labels = this.props.monthExpenseTotals.janCategoriesTotals;
       currentPie.config.options.title.text = 'January';
       currentPie.update();
     } else if (e.target.name === 'February') {
+      currentPie.config.data.datasets[0].backgroundColor = ['#52a7f6', '#537871', '#f66652', '#A7C958']
       currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.febExpenseTotals;
       currentPie.config.data.labels = this.props.monthExpenseTotals.febCategoriesTotals;
       currentPie.config.options.title.text = 'February';
       currentPie.update();
-    } else if (e.target.name === 'March') {
+    } else if (e.target.name === 'March') {      
+      currentPie.config.data.datasets[0].backgroundColor = ['#A7C958', '#7b52f6', '#FF0000', '#537871', '#f66652']
       currentPie.config.data.datasets[0].data = this.props.monthExpenseTotals.marExpenseTotals;
       currentPie.config.data.labels = this.props.monthExpenseTotals.marCategoriesTotals;
       currentPie.config.options.title.text = 'March';
@@ -50,6 +53,7 @@ class Pie extends React.Component {
               datasets: [{
                 data: this.props.monthExpenseTotals.janExpenseTotals,
                 backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958', '#FDEB00', '#52a7f6', '#7b52f6', '#cdf652' ]
+                          // "Online Services" "Travel" "Restaurants/Dining" "Groceries" "Clothing/Shoes" "Utilities""Transfers" "Insurance"
               }]
             }}
             options={{ 
@@ -60,7 +64,7 @@ class Pie extends React.Component {
                 display: true,
                 position: 'right',
                 labels: {
-                  fontSize: 11,
+                  fontSize: 10,
                   padding: 15,
                   usePointStyle: true
                 }
