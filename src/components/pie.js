@@ -41,9 +41,9 @@ class Pie extends React.Component {
           <div className="pie_header">
             Expenses Details
             <div className="pie_buttons">
-              <button name="January" onClick={this.clickHandler}>January</button>
-              <button name="February" onClick={this.clickHandler}>February</button>
-              <button name="March" onClick={this.clickHandler}>March</button>
+              <button name="January" onClick={this.clickHandler}>Jan</button>
+              <button name="February" onClick={this.clickHandler}>Feb</button>
+              <button name="March" onClick={this.clickHandler}>Mar</button>
             </div>
           </div>
           <Doughnut 
@@ -53,7 +53,6 @@ class Pie extends React.Component {
               datasets: [{
                 data: this.props.monthExpenseTotals.janExpenseTotals,
                 backgroundColor: [ '#f66652', '#537871', '#52f6a1', '#A7C958', '#FDEB00', '#52a7f6', '#7b52f6', '#cdf652' ]
-                          // "Online Services" "Travel" "Restaurants/Dining" "Groceries" "Clothing/Shoes" "Utilities""Transfers" "Insurance"
               }]
             }}
             options={{ 
