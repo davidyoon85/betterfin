@@ -103,7 +103,8 @@ class Main extends Component {
     render() {
         const userName = this.state.data.accounts.account[0].displayedName;
         const transactions = this.state.data.trxs.transaction;
-        const { monthExpenseTotals } = this.state;
+        const monthExpenseTotals = this.state.monthExpenseTotals;
+        const userInfo = this.state.data.accounts.account[0]
 
         return (
             <div>
@@ -112,7 +113,7 @@ class Main extends Component {
                 </div>
                 <div className="pageContent">
                     <div className="profile_container">
-                        <UserProfile />
+                        <UserProfile userInfo={userInfo}/>
                     </div>
 
                     <div className="chart_container">

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const trxData = require('../data/data.json');
-
 class UserProfile extends Component {
     formatUserName(name) {
         name = name.toLowerCase()
@@ -13,9 +11,9 @@ class UserProfile extends Component {
     }
 
     render() {
-        const account = Object.values(trxData.accounts.account)[0];
+        const account = this.props.userInfo;
         const { accountName, accountNumber } = account;
-        const userName = this.formatUserName(trxData.accounts.account[0].displayedName.split(' ')[0]);
+        const userName = this.formatUserName(account.displayedName.split(' ')[0]);
 
         return (
             <div className="profile_main">
