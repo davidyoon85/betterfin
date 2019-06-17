@@ -1,5 +1,5 @@
 <p align="left">
-<img src="./public/betterfin_logo.svg" width="500" height="300" align="left"/>
+<img src="./public/betterfin_logo.svg" width="200" height="100" align="left"/>
 </p>
   
 ### Betterfin
