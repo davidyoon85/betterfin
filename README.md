@@ -24,7 +24,7 @@ User will be able to track total monthly expenses. Hoving over the month's data 
 
 Created using Chart.js
 
-User can view a month's expenses, breakdown into percentages for each category. Hoving over the category's section on the graph, will display specific dollar amounts.
+User can view a month's expenses, breakdown into percentages for each category. Hoving over the category's section on the graph, will display specific dollar amounts. Also, the user can select a different month and the pie graph will dynamically regenerate to show the new data.
 
 <p align="center">
 <img src="./public/piechart.jpeg" width="500" height="300" align="middle"/>
