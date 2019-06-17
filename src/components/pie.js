@@ -39,7 +39,7 @@ class Pie extends React.Component {
       <div className="pie_section">
         <div className="pie_chart">
           <div className="pie_header">
-            Expenses Details
+            Expense Details
             <div className="pie_buttons">
               <button name="January" onClick={this.clickHandler}>Jan</button>
               <button name="February" onClick={this.clickHandler}>Feb</button>

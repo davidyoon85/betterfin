@@ -7,7 +7,7 @@ class Chart extends Component {
         return (
             <div className="chart_section">
                 <div className="balance_chart">
-                    <div className="chart_header">Monthly Expenses</div>
+                    <div className="chart_header">Total Expense by Month</div>
                     <Line 
                         data={{
                             labels: this.props.monthExpenseTotals.monthLabels,
@@ -60,6 +60,11 @@ class Chart extends Component {
                                 xPadding: 15,
                                 yPadding: 15,
                                 displayColors: false,
+                            },
+                            elements: {
+                                line: {
+                                    tension: 0
+                                }
                             },
                             responsive: true,
                         }}
