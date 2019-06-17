@@ -8,17 +8,23 @@ React, JavaScript, HTML5, and CSS3.
 
 ### Monthly Expense Overview
 
+Created using Chart.js
+
 <p align="center">
 <img src="./public/linegraph.jpeg" width="500" height="300" align="middle"/>
 </p>
 
 ### Monthly Expense Breakdown
 
+Created using Chart.js
+
 <p align="center">
 <img src="./public/piechart.jpeg" width="500" height="300" align="middle"/>
 </p>
 
 ### Transaction Chart
+
+Created using React Table
 
 <p align="center">
 <img src="./public/transactionchart.jpeg" width="500" height="300" align="middle"/>
