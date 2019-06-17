@@ -1,5 +1,5 @@
-<p text-align='center'>
-  <img src="./public/betterfin_logo.svg" width="200" height="100" align="left"/>
+<p align='center'>
+  <img src="./public/betterfin_logo.svg" width="200" height="100" align="center"/>
 </p>
 <br/>
 
