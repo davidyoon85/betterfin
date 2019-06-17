@@ -58,7 +58,7 @@ class Pie extends React.Component {
                   e.target.style.cursor = 'pointer';
                 },
                 display: true,
-                position: 'bottom',
+                position: 'right',
                 labels: {
                   fontSize: 12,
                   padding: 15,
@@ -76,6 +76,7 @@ class Pie extends React.Component {
               title:{
                 display: true,
                 text: 'Janurary',
+                position: 'left',
                 padding: 10,
                 fontSize: 20
               },
@@ -97,7 +98,7 @@ class Pie extends React.Component {
                 yPadding: 15,
                 displayColors: false,
             },
-              responsive: true,
+              maintainAspectRatio : false
             }}
             
           />
