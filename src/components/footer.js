@@ -27,11 +27,11 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="footer_info">
-                                <div>Proudly Built in&nbsp;Brooklyn, New York</div>
+                                <div className="footer_info_location">Proudly Built in&nbsp;Brooklyn, New York</div>
                                 <div className="divider w-hidden-tiny"></div>
-                                    <div>
-                                        <a href="mailto:info@betterfin.com?subject=I%20have%20a%20question" target="_blank" rel="noopener noreferrer" className="link-grey">&nbsp;All Rights Reserved 2019,&nbsp;Betterfin,&nbsp;Inc.</a>
-                                    </div>
+                                <div className="footer_info_contact">
+                                    <a href="mailto:info@betterfin.com?subject=I%20have%20a%20question" target="_blank" rel="noopener noreferrer" className="link-grey">&nbsp;All Rights Reserved 2019,&nbsp;Betterfin,&nbsp;Inc.</a>
+                                </div>
                             </div>
                         </div>
                     </div>
