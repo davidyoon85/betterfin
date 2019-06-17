@@ -2,7 +2,7 @@
 <img src="./public/betterfin_logo.svg" width="200" height="100" align="left"/>
 </p>
   
-### Betterfin
+  ### Betterfin
 This is a single page responsive app that gives the user a snapshot of their expenses. The user will be able to quickly understand the data by glancing at a monthly expense overview, month by month expense breakdown, and individual transaction chart.
 
 You can visit the app [here](https://betterfin-davidyoon.herokuapp.com/)!
