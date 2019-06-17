@@ -60,7 +60,7 @@ class Pie extends React.Component {
                 display: true,
                 position: 'right',
                 labels: {
-                  fontSize: 12,
+                  fontSize: 11,
                   padding: 15,
                   usePointStyle: true
                 }
@@ -78,7 +78,7 @@ class Pie extends React.Component {
                 text: 'Janurary',
                 position: 'left',
                 padding: 10,
-                fontSize: 20
+                fontSize: 24
               },
               tooltips: {
                 enabled: true,
@@ -98,7 +98,7 @@ class Pie extends React.Component {
                 yPadding: 15,
                 displayColors: false,
             },
-              // maintainAspectRatio : false
+              responsive: true
             }}
             
           />
