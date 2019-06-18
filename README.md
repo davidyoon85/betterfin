@@ -17,7 +17,7 @@ Created using Chart.js
 User will be able to track total monthly expenses. Hoving over the month's data point on the graph, will display specific dollar amounts.
 
 <p align="center">
-<img src="./public/linegraph.jpeg" width="500" height="300" align="middle"/>
+<img src="./public/expensegraph.jpeg" width="500" height="300" align="middle"/>
 </p>
 
 ### Monthly Expense Breakdown
