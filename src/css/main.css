@@ -315,14 +315,15 @@ canvas {
     color: #898B96;
     font-weight: 700;
     font-size: 1.4em;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
 }
 
 .pie_buttons {
     display: flex;
     justify-content: flex-end;
     width: 40%;
-    margin-bottom: 1%;
+    top: 10px;
+    position: relative;
 }
 
 .pie_buttons > button {
