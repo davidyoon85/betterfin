@@ -1,7 +1,7 @@
 .nav {
     background: #fff;
     height: 10vh;
-    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    box-shadow: $box-shadow;
 }
 
 .navContent {
@@ -23,12 +23,10 @@
 .betterfin-logo {
     width: 100%;
     max-width: 150px;
-    display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    justify-content: center;
+
+    @include flex-center();
 }
 
 .drop-menu {
@@ -51,9 +49,7 @@
 }
 
 .avatar_img {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
 }
 
 .avatar_svg {
@@ -75,12 +71,11 @@
 }
 
 .subMenu {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     top: 3px;
     margin-left: 6px;
+
+    @include flex-center();
 }
 
 .nav-right {

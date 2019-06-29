@@ -4,15 +4,14 @@
     .footer_wrapper {
         position: static;
         z-index: 1;
-        display: block;
         overflow: visible;
         width: 100%;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         align-self: center;
         flex: 0 auto;
         background-color: transparent;
+
+        @include flex-center();
     
         .footer {
             display: flex;
@@ -54,13 +53,12 @@
 }
 
 .footer-menu {
-    display: flex;
     padding-right: 15px;
     padding-left: 15px;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex: 1;
+
+    @include flex-center();
 
     @include large {
         width: 100%;
@@ -120,11 +118,10 @@
     }
 
     .footer_social {
-        display: flex;
         margin-right: -3px;
         margin-left: -3px;
-        justify-content: center;
-        align-items: center;
+
+        @include flex-center();
     
         a {
             display: flex;

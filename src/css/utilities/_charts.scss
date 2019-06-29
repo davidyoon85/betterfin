@@ -1,5 +1,5 @@
 .ReactTable {
-    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    box-shadow: $box-shadow;
     margin-bottom: 5%;
 
     @include small {
@@ -14,7 +14,7 @@
 
     .rt-thead {
         background: $primary-color;
-        color: white;
+        color: #fff;
         font-size: 1.1em;
         font-weight: 700;
         min-width: 340px !important;
@@ -33,7 +33,7 @@
     }
 
     .rt-tbody .rt-tr-group:nth-child(n) {
-        color: black;
+        color: #000;
         border: none;
 
         &:hover {
@@ -44,7 +44,7 @@
 
     .-pagination .-btn {
         background: $primary-color !important;
-        color: white !important;
+        color: #fff !important;
         font-weight: 700;
 
         &:hover {
@@ -69,12 +69,12 @@
 
 .ReactTable.-striped {
     .rt-tr.-odd {
-        background: white !important;
+        background: #fff !important;
     }
 
     .rt-tr.-odd:hover {
         background: $primary-color !important;
-        color: black !important;
+        color: #000 !important;
     }
 }
 
@@ -145,7 +145,7 @@
 
 canvas {
     width: 100% !important;
-    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    box-shadow: $box-shadow;
     padding: 20px 20px;
     box-sizing: border-box;
 
@@ -184,14 +184,13 @@ canvas {
         padding: 5px;
         color: #fff;
         margin: 0px 6px 6px 0px;
-        display: flex;
-        align-items: center;
         font-size: .7em;
-        justify-content: center;
         transition: all 0.2s ease-in-out;
         width: 25%;
         border-radius: 15px;
         outline: none;
+
+        @include flex-center();
 
         @include medium {
             width: 40%;

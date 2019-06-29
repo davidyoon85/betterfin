@@ -27,7 +27,7 @@ body {
 
 body a {
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 
 body img {
@@ -93,20 +93,19 @@ body .pageContent {
 .betterfin-logo {
   width: 100%;
   max-width: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .drop-menu {
@@ -136,9 +135,9 @@ body .pageContent {
 }
 
 .avatar_img {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -171,18 +170,18 @@ body .pageContent {
 }
 
 .subMenu {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  position: relative;
+  top: 3px;
+  margin-left: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  top: 3px;
-  margin-left: 6px;
 }
 
 .nav-right {
@@ -281,26 +280,27 @@ body .pageContent {
 .footer_container .footer_wrapper {
   position: static;
   z-index: 1;
-  display: block;
   overflow: visible;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 auto;
+          flex: 0 auto;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 auto;
-          flex: 0 auto;
-  background-color: transparent;
 }
 
 .footer_container .footer_wrapper .footer {
@@ -356,24 +356,24 @@ body .pageContent {
 }
 
 .footer-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding-right: 15px;
   padding-left: 15px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 @media (max-width: 767px) {
@@ -465,11 +465,11 @@ body .pageContent {
 }
 
 .footer-bottom .footer_social {
+  margin-right: -3px;
+  margin-left: -3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: -3px;
-  margin-left: -3px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -580,7 +580,7 @@ body .pageContent {
 
 .ReactTable .rt-thead {
   background: #f66652;
-  color: white;
+  color: #fff;
   font-size: 1.1em;
   font-weight: 700;
   min-width: 340px !important;
@@ -599,7 +599,7 @@ body .pageContent {
 }
 
 .ReactTable .rt-tbody .rt-tr-group:nth-child(n) {
-  color: black;
+  color: #000;
   border: none;
 }
 
@@ -611,7 +611,7 @@ body .pageContent {
 
 .ReactTable .-pagination .-btn {
   background: #f66652 !important;
-  color: white !important;
+  color: #fff !important;
   font-weight: 700;
 }
 
@@ -636,12 +636,12 @@ body .pageContent {
 }
 
 .ReactTable.-striped .rt-tr.-odd {
-  background: white !important;
+  background: #fff !important;
 }
 
 .ReactTable.-striped .rt-tr.-odd:hover {
   background: #f66652 !important;
-  color: black !important;
+  color: #000 !important;
 }
 
 .table_container {
@@ -769,21 +769,21 @@ canvas {
   padding: 5px;
   color: #fff;
   margin: 0px 6px 6px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: .7em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   width: 25%;
   border-radius: 15px;
   outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 600px) {

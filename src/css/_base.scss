@@ -29,6 +29,15 @@ $font-size: 12px;
 $footer-border-color: #e1e6ee;
 $footer-link-color: #596273;
 
+$box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+
+//Flexbox Center
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 //Media Queries
 @mixin small {
     @media (max-width: 479px) { @content; }
