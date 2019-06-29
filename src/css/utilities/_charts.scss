@@ -1,0 +1,156 @@
+.ReactTable {
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    margin-bottom: 5%;
+
+    .rt-tbody .rt-td {
+        text-align: center;
+        width: 85px !important;
+    }
+
+    .rt-thead {
+        background: $primary-color;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 700;
+        min-width: 340px !important;
+    }
+
+    .rt-th {
+        width: 85px !important;
+    }
+
+    .-header {
+        line-height: 2;
+    }
+    
+    .rt-tbody {
+        min-width: 340px !important;
+    }
+
+    .rt-tbody .rt-tr-group:nth-child(n) {
+        color: black;
+        border: none;
+
+        &:hover {
+            background: $primary-color;
+            filter: brightness(200%)
+        }
+    }
+
+    .-pagination .-btn {
+        background: $primary-color !important;
+        color: white !important;
+        font-weight: 700;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    .-previous button:hover {
+        opacity: .5;
+        background: $primary-color;
+        color: $primary-color;
+    }
+    
+    .rt-tr {
+        padding: 6px;
+    }
+}
+
+.ReactTable.-striped {
+    .rt-tr.-odd {
+        background: white !important;
+    }
+
+    .rt-tr.-odd:hover {
+        background: $primary-color !important;
+        color: black !important;
+    }
+}
+
+.table_container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.table_header {
+    color: $header-font-color;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.chart_container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.chart_section {
+    display: flex;
+    height: 60%;
+}
+
+.pie_section {
+    height: 70%;
+}
+
+.balance_chart {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.pie_chart {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+canvas {
+    width: 100% !important;
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.06);
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+.chart_header {
+    color: $header-font-color;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 5%;
+}
+
+.pie_header {
+    display: flex;
+    justify-content: space-between;
+    color: $header-font-color;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 5%;
+}
+
+.pie_buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    top: 10px;
+    position: relative;
+
+    button {
+        background: $primary-color;
+        border: 1px solid $primary-color;
+        padding: 5px;
+        color: #fff;
+        margin: 0px 6px 6px 0px;
+        display: flex;
+        align-items: center;
+        font-size: .7em;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+        width: 25%;
+        border-radius: 15px;
+        outline: none;
+    }
+}
