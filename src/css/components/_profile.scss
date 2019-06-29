@@ -9,16 +9,16 @@
 .profile_main {
     display: flex;
     flex-direction: column;
-}
 
-.profile_main h1 {
-    font-size: 2.5em;
-    font-weight: 400;
-    margin-bottom: 24px;
-}
+    h1 {
+        font-size: 2.5em;
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
 
-.profile_main h2 {
-    font-size: 1.9em;
-    font-weight: 400;
-    margin-bottom: 5%;
+    h2 {
+        font-size: 1.9em;
+        font-weight: 400;
+        margin-bottom: 5%;
+    }
 }
