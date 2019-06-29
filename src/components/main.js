@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/main.css';
 
 import Nav from './nav';
 import UserProfile from './user_profile';
