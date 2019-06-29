@@ -1,0 +1,34 @@
+body {
+    font-family: $font-family;
+    color: $font-color;
+    font-size: $font-size;
+
+    a {
+        text-decoration:none;
+        color: black;
+    }
+
+    img {
+        width: 100px;
+        margin: 2px 0 0 0;
+    }
+
+    button:hover {
+        cursor: pointer;
+        opacity: .5;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+
+    .pageContent {
+        height: 100vh;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 48px 0px;
+    }
+}
