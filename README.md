@@ -8,7 +8,7 @@ This is a single page responsive app that gives the user a snapshot of their exp
 You can visit the app [here](https://betterfin-davidyoon.herokuapp.com/)!
 
 ### Technologies Used
-React, JavaScript, HTML5, and CSS3.
+React, JavaScript, Sass/SCSS, HTML5, and CSS3.
 
 ### Monthly Expense Overview
 
