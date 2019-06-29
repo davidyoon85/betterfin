@@ -8,7 +8,6 @@ import Pie from './pie';
 import Table from './table';
 import Footer from './footer';
 
-
 const data = require('../data/data.json');
 
 class Main extends Component {
