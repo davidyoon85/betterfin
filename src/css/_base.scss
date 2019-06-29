@@ -29,3 +29,15 @@ $font-size: 12px;
 $footer-border-color: #e1e6ee;
 $footer-link-color: #596273;
 
+//Media Queries
+@mixin small {
+    @media (max-width: 479px) { @content; }
+}
+
+@mixin medium {
+    @media (max-width: 600px) { @content; }
+}
+
+@mixin large {
+    @media (max-width: 767px) { @content; }
+}

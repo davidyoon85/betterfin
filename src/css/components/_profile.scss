@@ -4,21 +4,48 @@
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+
+    @include medium {
+        width: 100%;
+        margin: 0 auto;
+        font-size: .8em;
+        min-width: 340px;
+    }
 }
 
 .profile_main {
     display: flex;
     flex-direction: column;
 
+    @include medium {
+        margin-bottom: 5%;
+    }
+
     h1 {
         font-size: 2.5em;
         font-weight: 400;
         margin-bottom: 24px;
+
+        @include medium {
+            margin-bottom: 12px;
+        }
+
+        @include small {
+            font-size: 2.2em;
+        }
     }
 
     h2 {
         font-size: 1.9em;
         font-weight: 400;
         margin-bottom: 5%;
+
+        @include medium {
+            font-size: 1.5em;
+        }
+
+        @include small {
+            font-size: 1.3em;
+        }
     }
 }
